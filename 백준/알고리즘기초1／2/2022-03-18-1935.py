@@ -1,10 +1,11 @@
 N = int(input())
 eq = input()
+alpha = [int(input()) for i in range(N)]
+
 stack = []
 for s in eq:
     if s.isalpha():
-        num = int(input())
-        stack.append(num)
+        stack.append(alpha[ord(s) - ord('A')])
     elif s == '+':
         stack.append(stack.pop(-2) + stack.pop())
     elif s == '-':
